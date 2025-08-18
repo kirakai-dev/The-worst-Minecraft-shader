@@ -13,9 +13,9 @@ in ivec2 lightMapCoords;
 void main() {
 
     vec3 lightColor = texture(lightmap,lightMapCoords).rgb;
-
+    
     vec4 outputColorData = texture(gtexture,texCoord);
-    vec3 outputColor = outputColorData.grb * (foliageColor*1.2);
+    vec3 outputColor = outputColorData.grr * (foliageColor*2.3);
     float transparency = outputColorData.a;
     if(transparency < 0.1){
         discard;
